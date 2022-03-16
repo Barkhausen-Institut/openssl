@@ -7,6 +7,7 @@
  * https://www.openssl.org/source/license.html
  */
 
+#if 0
 #include "e_os.h"
 #include <string.h>
 #include <sys/types.h>
@@ -847,3 +848,4 @@ void engine_load_devcrypto_int()
     ENGINE_free(e);          /* Loose our local reference */
     ERR_clear_error();
 }
+#endif

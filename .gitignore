@@ -27,7 +27,6 @@ Makefile
 # Auto generated headers
 /crypto/buildinf.h
 /apps/progs.h
-/include/crypto/*_conf.h
 /openssl/include/opensslconf.h
 /util/domd
 
@@ -76,7 +75,6 @@ Makefile
 !/fuzz/*.*
 
 # Misc auto generated files
-/include/openssl/opensslconf.h
 /tools/c_rehash
 /tools/c_rehash.pl
 /util/shlib_wrap.sh

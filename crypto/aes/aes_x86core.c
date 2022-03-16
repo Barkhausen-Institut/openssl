@@ -98,7 +98,7 @@ typedef unsigned long long u64;
 #elif defined(__GNUC__) && __GNUC__>=2
 # if defined(__i386) || defined(__i386__) || defined(__x86_64) || defined(__x86_64__)
 #   define ROTATE(a,n)  ({ register unsigned int ret;   \
-                asm (           \
+                __asm__ (           \
                 "roll %1,%0"        \
                 : "=r"(ret)     \
                 : "I"(n), "0"(a)    \
