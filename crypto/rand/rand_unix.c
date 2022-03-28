@@ -346,6 +346,11 @@ static ssize_t sysctl_random(char *buf, size_t buflen)
  */
 static ssize_t syscall_random(void *buf, size_t buflen)
 {
+    uint8_t *bytes = (uint8_t*)buf;
+    for(size_t i = 0; i < buflen; ++i)
+        bytes[i] = rand();
+    return buflen;
+
     /*
      * Note: 'buflen' equals the size of the buffer which is used by the
      * get_entropy() callback of the RAND_DRBG. It is roughly bounded by
