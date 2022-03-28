@@ -30,9 +30,9 @@ extern "C" {
 #ifndef OPENSSL_NO_CHACHA
 # define OPENSSL_NO_CHACHA
 #endif
-#ifndef OPENSSL_NO_TLS1_3
-# define OPENSSL_NO_TLS1_3
-#endif
+// #ifndef OPENSSL_NO_TLS1_3
+// # define OPENSSL_NO_TLS1_3
+// #endif
 #ifndef OPENSSL_NO_POLY1305
 # define OPENSSL_NO_POLY1305
 #endif
@@ -42,9 +42,9 @@ extern "C" {
 #ifndef OPENSSL_NO_SM2
 # define OPENSSL_NO_SM2
 #endif
-#ifndef OPENSSL_NO_EC
-# define OPENSSL_NO_EC
-#endif
+// #ifndef OPENSSL_NO_EC
+// # define OPENSSL_NO_EC
+// #endif
 
 #ifndef OPENSSL_NO_MD2
 # define OPENSSL_NO_MD2

@@ -11,11 +11,15 @@ def build(gen, env):
         '-DOPENSSL_NO_UI_CONSOLE=1',
         '-D_GNU_SOURCE',
         '-DOPENSSL_NO_ASM',
+        '-DECP_NISTZ256_REFERENCE_IMPLEMENTATION',
+        '-DOPENSSL_RAND_SEED_GETRANDOM',
     ]
     env['CPPPATH'] += [
         'src/libs/openssl',
         'src/libs/openssl/include',
         'src/libs/openssl/crypto/modes',
+        'src/libs/openssl/crypto/ec/curve448',
+        'src/libs/openssl/crypto/ec/curve448/arch_32',
     ]
 
     # shut off warnings
@@ -84,6 +88,20 @@ def build(gen, env):
     crypto_files += env.glob('crypto/dh/*.c')
     crypto_files += env.glob('crypto/dsa/*.c')
     crypto_files += env.glob('crypto/dso/*.c')
+    crypto_files += env.glob('crypto/ec/curve448/arch_32/*.c')
+    crypto_files += env.glob('crypto/ec/curve448/*.c')
+    crypto_files += env.glob('crypto/ec/curve*.c')
+    crypto_files += env.glob('crypto/ec/ec2*.c')
+    crypto_files += env.glob('crypto/ec/ec_*.c')
+    crypto_files += env.glob('crypto/ec/ecd*.c')
+    crypto_files += env.glob('crypto/ec/eck*.c')
+    crypto_files += env.glob('crypto/ec/ecp_mont.c')
+    crypto_files += env.glob('crypto/ec/ecp_nist.c')
+    crypto_files += env.glob('crypto/ec/ecp_nistp*.c')
+    crypto_files += env.glob('crypto/ec/ecp_nistz256.c')
+    crypto_files += env.glob('crypto/ec/ecp_oct.c')
+    crypto_files += env.glob('crypto/ec/ecp_smpl.c')
+    crypto_files += env.glob('crypto/ec/ecx_meth.c')
     crypto_files += env.glob('crypto/engine/*.c')
     crypto_files += env.glob('crypto/err/*.c')
     crypto_files += env.glob('crypto/evp/*.c')
