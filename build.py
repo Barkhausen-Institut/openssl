@@ -32,6 +32,9 @@ def build(gen, env):
         '-Wno-unused-variable',
     ]
 
+    # disable LTO to reduce link times
+    env.remove_flag('CFLAGS', '-flto')
+
     # the following occur on ARM; not sure if everything still works :/
     if env['ISA'] == 'arm':
         env['CFLAGS'] += [
